@@ -60,7 +60,8 @@
               required
               minlength="2"
               maxlength="40"
-              data-error="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы."
+              pattern="^[а-яА-Яa-zA-Z \-]+$"
+              data-error="Имя может содержать только буквы, пробел или дефис"
             />
             <span class="popup__error profile-name-error"></span>
             <input
@@ -72,7 +73,8 @@
               required
               minlength="2"
               maxlength="200"
-              data-error="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы."
+              pattern="^[а-яА-Яa-zA-Z \-]+$"
+              data-error="Описание может содержать только буквы, пробел или дефис"
             />
             <span class="popup__error profile-description-error"></span>
             <button type="submit" class="button popup__button">
@@ -95,7 +97,8 @@
               minlength="2"
               maxlength="30"
               required
-              data-error="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+              pattern="^[а-яА-Яa-zA-Z \-]+$"
+              data-error="Название может содержать только буквы, пробел или дефис"
             />
             <span class="place-name-input-error popup__error"></span>
             <input
@@ -105,6 +108,7 @@
               class="popup__input popup__input_type_url"
               placeholder="Ссылка на картинку"
               required
+              data-error="Введите корректный URL"
             />
             <span class="place-url-input-error popup__error"></span>
             <button type="submit" class="button popup__button">

@@ -29,20 +29,17 @@ export function createCard(cardItems, currentUserId, deleteCallback, likeCallbac
     deleteButton.style.display = 'none';
   }
 
-  likeButton.addEventListener('click', likeCallback);
+  likeButton.addEventListener('click', () =>
+    likeCallback(likeButton, likeCount, cardItems._id)
+  );
+  
   cardImage.addEventListener('click', imageClickCallback);
 
   return cardElement;
 }
 
-export function handleLikeCard(evt) {
-  const likeButton = evt.target;
-  const cardElement = likeButton.closest('.card');
-  const likeCountElement = cardElement.querySelector('.card__like-count');
-  const cardId = cardElement.dataset.cardId;
-
+export function handleLikeCard(likeButton, likeCountElement, cardId) {
   const isLiked = likeButton.classList.contains('card__like-button_is-active');
-
   const request = isLiked ? unlikeCard(cardId) : likeCard(cardId);
 
   request

@@ -110,11 +110,13 @@ editButton.addEventListener('click', () => {
 });
 
 addButton.addEventListener('click', () => {
+  formAddCard.reset();
   clearValidation(formAddCard, validationConfig);
   openModal(popupAddCard);
 });
 
 avatarEditButton.addEventListener('click', () => {
+  formAvatar.reset();
   clearValidation(formAvatar, validationConfig);
   openModal(popupAvatar);
 });
